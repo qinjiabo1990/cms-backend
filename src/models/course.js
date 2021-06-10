@@ -22,9 +22,9 @@ const schema = new Schema({
     }
 }, {
     timestamps:true,
-    toJSON:{
-        virtuals: true //用于下边的virtual
-    },
+    // toJSON:{
+    //     virtuals: true //用于下边的virtual
+    // },
     id: false
 })
 
