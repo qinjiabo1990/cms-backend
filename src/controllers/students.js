@@ -37,6 +37,20 @@ const deleteStudentById = async (req, res) => {
     if (!student) {
         return res.sendStatus(404);
     }
+
+    await Course.updateMany(
+        //1st step 的另一种写法
+        // {
+        //     _id: { $in: student.courses}
+        // }
+        {
+            students: student._id
+        }, {
+        $pull: {
+            students: student._id
+        }
+    })
+
     return res.sendStatus(204);
 }
 
@@ -93,10 +107,10 @@ const addStudentToCourse = async (req, res) => {
 }
 
 const removeStudentFromCourse = async (req, res) => {
-    const {id, code} = req.params;
+    const { id, code } = req.params;
     const student = await Student.findById(id).exec();
     const course = await Course.findById(code).exec();
-    if (!student ||!course){
+    if (!student || !course) {
         return res.status(404).send('student or course is not found')
     }
     student.courses.pull(course._id);
