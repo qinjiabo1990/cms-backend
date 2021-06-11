@@ -19,7 +19,11 @@ const schema = new Schema({
     __v:{
         type: Number,
         select: false //不返回
-    }
+    },
+    students:[{
+        type: Schema.Types.ObjectId, //如果是默认的id，应该是这个，注意objectid是mongodb独有，并在在js里
+        ref: 'Student'
+    }]
 }, {
     timestamps:true,
     // toJSON:{

@@ -8,7 +8,7 @@ const getAllCourses = async (req, res) => {
 
 const getCourseById = async (req, res) => {
     const {id} = req.params;
-    const courses = await Course.findById(id).exec();
+    const courses = await Course.findById(id).populate('students','lastName').exec();
     if(!courses){
         return res.sendStatus(404);
     }

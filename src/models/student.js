@@ -39,7 +39,8 @@ const schema = new Schema({
     },
     lastName: {
         type: String,
-        require: true
+        require: true,
+        trim: true
     },
     email: {
         type: String,
