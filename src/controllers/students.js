@@ -24,7 +24,7 @@ const getStudentById = async (req, res) => {
 const updateStudentById = async (req, res) => {
     const { id } = req.params;
     const { firstName, lastName, email } = req.body;
-    const student = await Student.findByIdAndUpdate(id, { firstName, lastName, email }, { new: true }).exec();
+    const student = await Student.findByIdAndUpdate(id, { firstName, lastName, email }, { new: true }).exec(); //new: true, return new result
     if (!student) {
         return res.status(404);
     }

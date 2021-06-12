@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.use('/students', studentRoute)
 router.use('/courses', courseRoute)
-// router.use('/teachers', teacherRoute)
+router.use('/teachers', teacherRoute)
 
 
 module.exports = router;

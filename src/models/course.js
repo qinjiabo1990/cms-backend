@@ -23,6 +23,10 @@ const schema = new Schema({
     students:[{
         type: Schema.Types.ObjectId, //如果是默认的id，应该是这个，注意objectid是mongodb独有，并在在js里
         ref: 'Student'
+    }],
+    teachers:[{
+        type: Schema.Types.ObjectId,
+        ref: 'Teacher'
     }]
 }, {
     timestamps:true,
