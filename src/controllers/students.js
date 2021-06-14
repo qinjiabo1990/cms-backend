@@ -81,7 +81,7 @@ const createStudent = async (req, res) => {
     //     next(error);
     // })
 
-    return res.sendStatus(201).json(student);
+    return res.status(201).json(student);
 }
 
 const addStudentToCourse = async (req, res) => {

@@ -7,13 +7,9 @@ const cors = require('cors');
 
 //import router
 const router = require(`./routes`);
-const {connectToDB} = require('./utils/db');
 const errorHandler = require('./middleware/errorHandler');
 
 //自己加winston, helmet
-
-//.env
-const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -29,9 +25,4 @@ app.use('/api', router);
 //error handler - 可查看express官方文件
 app.use(errorHandler);
 
-connectToDB(); 
-
-
-app.listen(PORT, ()=>{
-  console.log(`server listening on port ${PORT}`);  
-});
+module.exports = app;

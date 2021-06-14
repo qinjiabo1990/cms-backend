@@ -11,7 +11,7 @@ module.exports = (error, req, res, next) => {
         }
     }
     //catch other errors
-
+    console.log(error);
 
     //大的error handler拆分小的errorhandler
 
