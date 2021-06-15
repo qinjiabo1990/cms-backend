@@ -33,18 +33,18 @@ const { Schema, model } = require('mongoose');
 const schema = new Schema({
     firstName: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
         minlength: 2
     },
     lastName: {
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         validate: {
             validator: (email) => {
                 return !Joi.string().email().validate(email).error;

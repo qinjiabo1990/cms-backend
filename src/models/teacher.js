@@ -4,17 +4,17 @@ const Joi = require('joi');
 const teacherSchema = new Schema({
     firstName:{
         type: String,
-        require: true,
+        required: true,
         trim: true
     },
     lastName:{
         type:String,
-        require:true,
+        required:true,
         trim: true
     },
     email:{
         type: String,
-        require:true,
+        required:true,
         validate: {
             validator: (email) => {
                 return !Joi.string().email().validate(email).error;

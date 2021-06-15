@@ -30,3 +30,7 @@ exports.connectToDB = () => {
 
     mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true}, );
 }
+
+exports.disconnectDB = async () => {
+    return mongoose.disconnect();
+}
